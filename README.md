@@ -58,7 +58,7 @@ dsv role create --name "${rolename}"
 clientcred=$(dsv client create --role "${rolename}" --plain | jq -c)
 
 # configure the dsv server, such as mytenant.secretsvaultcloud.com
-gh secret set DSV_CLIENT_ID
+gh secret set DSV_SERVER
 
 # use the generated client credentials in your repo
 gh secret set DSV_CLIENT_ID --body "$( echo "${clientcred}" | jq '.clientId' )"
@@ -83,7 +83,7 @@ dsv policy create \
   --effect 'allow' \
   --subjects "roles:$rolename" \
   --desc "${desc}" \
-  --resources "${secretpath}:<.*>"
+  --resources "secrets:${secretpath}:<.*>"
 ```
 
 ## Usage

@@ -56,11 +56,11 @@ Use the GitHub cli to configure the values based on the test data.
 This shouldn't be sensitive stuff, just dummy values for testing retrieval.
 
 ```shell
-gh secret create DSV_SECRET_PATH
-gh secret create DSV_SECRET_KEY_1
-gh secret create DSV_SECRET_KEY_2
-gh secret create DSV_EXPECTED_VALUE_1
-gh secret create DSV_EXPECTED_VALUE_2
+gh secret set DSV_SECRET_PATH
+gh secret set DSV_SECRET_KEY_1
+gh secret set DSV_SECRET_KEY_2
+gh secret set DSV_EXPECTED_VALUE_1
+gh secret set DSV_EXPECTED_VALUE_2
 ```
 
 For general config you'll also need:
